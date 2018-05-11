@@ -22,3 +22,6 @@ yarn-error.log*
 
 #idea
 /.idea
+
+# css generates automaticaly from scss
+src/**/*.css
