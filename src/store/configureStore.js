@@ -1,7 +1,6 @@
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import reduxImmutableStateInvariant from 'redux-immutable-state-invariant';
 import rootReducer from 'reducers';
 import initialState from './initialState';
 
@@ -10,6 +9,8 @@ const configureStore = () => {
   if (process.env.NODE_ENV !== 'production') {
     const logger = require('redux-logger').default;
     middleware.push(logger);
+    const reduxImmutableStateInvariant = require('redux-immutable-state-invariant')
+      .default;
     middleware.push(reduxImmutableStateInvariant());
   }
 
